@@ -1,0 +1,8 @@
+{
+    "version": 2,
+    "public": "frontend",
+    "routes": [
+      { "src": "/(.*)", "dest": "/index.html" }
+    ]
+  }
+  
