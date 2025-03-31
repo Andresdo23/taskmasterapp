@@ -14,9 +14,7 @@ app.use(router);
 Parse.initialize(process.env.PARSE_APP_ID, process.env.PARSE_JS_KEY);
 Parse.serverURL = process.env.PARSE_SERVER_URL;
 
-app.get('/', (req, res) => {
-    res.send('Aplicação rodando com sucesso!');
-});
+
 
 console.log("Parse Server configurado com sucesso!");
 
