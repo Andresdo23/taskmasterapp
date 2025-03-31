@@ -3,19 +3,19 @@ const addForm = document.querySelector('.add-form');
 const inputTask = document.querySelector('.input-task');
 
 const fetchTasks = async () => {
-  const response = await fetch('http://localhost:3333/tasks')
+  const response = await fetch('https://taskmasterapp-ten.vercel.app/')
   const tasks = await response.json()
   return tasks;
 }
 
-const baseUrl = "http://localhost:3333";
+const baseUrl = "https://taskmasterapp-ten.vercel.app/";
 
 const addTask = async (event) => {
   event.preventDefault();
 
   const task = { title: inputTask.value };
 
-  await fetch('http://localhost:3333/tasks', {
+  await fetch('https://taskmasterapp-ten.vercel.app/', {
     method: 'post',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(task),
@@ -27,7 +27,7 @@ const addTask = async (event) => {
 }
 
 const deleteTask = async (id) => {
-  await fetch(`http://localhost:3333/tasks/${id}`, {
+  await fetch(`https://taskmasterapp-ten.vercel.app/${id}`, {
     method: 'delete',
   });
 
@@ -36,7 +36,7 @@ const deleteTask = async (id) => {
 
 const updateTask = async ({ id, title, status }) => {
 
-  await fetch(`http://localhost:3333/tasks/${id}`, {
+  await fetch(`https://taskmasterapp-ten.vercel.app/${id}`, {
     method: 'put',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ title, status }),
