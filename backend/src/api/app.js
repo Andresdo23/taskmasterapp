@@ -1,8 +1,8 @@
-/*const express = require('express');
+const express = require('express');
 const cors = require('cors');
 const Parse = require('parse/node'); 
 require('dotenv').config();
-const router = require('./router');
+const router = require('../router');
 
 const app = express();
 
@@ -21,4 +21,3 @@ Parse.serverURL = process.env.PARSE_SERVER_URL;
 console.log("Parse Server configurado com sucesso!");
 
 module.exports = app;
-*/
