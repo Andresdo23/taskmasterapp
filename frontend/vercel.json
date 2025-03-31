@@ -1,8 +1,16 @@
 {
     "version": 2,
-    "public": "frontend",
+    "builds": [
+      {
+        "src": "frontend/**",
+        "use": "@vercel/static"
+      }
+    ],
     "routes": [
-      { "src": "/(.*)", "dest": "/index.html" }
+      {
+        "src": "/(.*)",
+        "dest": "/frontend/index.html"
+      }
     ]
   }
   
