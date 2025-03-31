@@ -10,10 +10,22 @@ app.use(express.json());
 app.use(cors());
 app.use(router);
 
+
 // Configuração do Parse Server
 Parse.initialize(process.env.PARSE_APP_ID, process.env.PARSE_JS_KEY);
 Parse.serverURL = process.env.PARSE_SERVER_URL;
 
+app.get('/api/data', async (req, res) => {
+    try {
+      const query = new Parse.Query('Tasks');
+      const results = await query.find();
+      res.json(results);
+    } catch (error) {
+      res.status(500).json({ error: 'Erro ao acessar o banco de dados' });
+    }
+  });
+  
+  module.exports = app;
 
 
 console.log("Parse Server configurado com sucesso!");
